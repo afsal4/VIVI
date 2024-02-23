@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% load static%}
+
+
+{% block title %}Home{% endblock title %}
+
+
+
+{% block body %}
+
+
+
+
+<style>
+    .bg-container {
+        background-image: url("https://images.unsplash.com/photo-1496065187959-7f07b8353c55?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHRlY2h8ZW58MHx8MHx8fDA%3D");
+        background-size: cover;
+        background-position: center;
+        height: 100vh; /* Adjust the height as needed */
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center align content horizontally */
+        justify-content: center; /* Center align content vertically */
+        padding: 20px; /* Add some padding for spacing */
+        color: white; /* Set text color to white */
+    }
+
+    .form {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center align form elements */
+    }
+
+    .form__input {
+        margin-bottom: 10px;
+        height: 50px;
+        width: 500px; /* Increase width for the input fields */
+        padding: 5px; /* Add padding for better appearance */
+        font-size: 16px; /* Adjust font size as needed */
+    }
+
+    .form__label {
+        margin-bottom: 5px;
+    }
+
+    .button {
+        width: 100%;
+        padding: 10px;
+        background-color: blue;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 20px; /* Add margin to separate button from input fields */
+    }
+
+    .h2added{
+        margin-bottom: 110px;
+    }
+</style>
+</head>
+<body>
+
+<div class="bg-container">
+<div class="carousel-caption d-none d-md-block"></div>
+
+<div class="container">
+    <h2 class="h2added">Company Details</h2>
+    <form action="{% url 'company_details' %}" class="form"  method="POST">
+        {% csrf_token %}
+        <label for="name" id='name' class="form__label">Name of the company</label>
+        <input type="text" placeholder="Name" class="form__input" name="name" id="name" required />
+
+        <label for="email" id='email' class="form__label">Email of the company</label>
+        <input type="email" placeholder="Email" class="form__input" name="email"  id="email"  required/>
+
+        <label for="subject" id="domain" class="form__label">Domain</label>
+        <input type="text" placeholder="Domain name" class="form__input" name="subject" id="subject" required/>
+
+        <button type="submit" class="button">Submit</button>
+
+    </form>
+</div>
+</div>
+
+</body>
+
+
+
+
+
+
+        <!-- <h5>First slide label</h5>
+        <p style="color: rgb(7, 220, 39);">Some representative placeholder content for the first slide.</p> -->
+    </div>
+</div>
+
+{% endblock body %}  

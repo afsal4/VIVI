@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Template</title>
+</head>
+<body>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>Question</th>
+            <th>Answer</th>
+            <th>Score</th>
+            <th>Resume Score</th>
+            <th>Overall Answer Score</th>
+            <th>Total Score</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in data %}
+        {{row}}
+            <tr>
+                <td>{{ row.question }}</td>
+                <td>{{ row.answer }}</td>
+                <td>{{ row.q_a_score }}</td>
+                <td>{{ row.resume_score }}</td>
+                <td>{{ row.overall_answer_score }}</td>
+                <td>{{ row.total_score }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+</body>
+</html>

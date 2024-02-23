@@ -1,0 +1,30 @@
+
+{% extends 'base.html' %}
+{% load static%}
+
+
+{% block title %}Home{% endblock title %}
+
+
+
+{% block body %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h1 style="text-align: center;">Cadidate link given below </h1>
+<a href='{% url "candidate_link" c_id %}'>Click here </a>
+    
+<a href="{% url 'candidate' %}" class="button" style="background-color: green; color: white; padding: 14px 20px; display: block; width: fit-content; margin: 200px auto 0; border-radius: 4px; text-decoration: none;">Click to go cadidate page</a>
+
+</body>
+</html>
+
+
+{% endblock body %}

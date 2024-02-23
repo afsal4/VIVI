@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIVI - Virtual Interview Platform</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        overflow: hidden; /* Prevent scrolling */
+        position: relative;
+        background: linear-gradient(to bottom, #373741 0%, #26262A 100%); /* Deep blue gradient with a slight lighter shade at the bottom */
+    }
+
+    .background-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3; /* Add a slight transparency for text readability */
+        background-image: url('{% static 'logo.png' %}');
+        background-size: cover;
+        z-index: -1;
+    }
+
+    .logo {
+        text-align: center;
+        margin-top: 15vh;
+    }
+
+    .logo img {
+        width: 150px;
+        height: auto;
+    }
+
+    .welcome-section {
+        text-align: center;
+        color: #fff; /* White text for better contrast on the gradient background */
+        {% comment %} box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7); {% endcomment %}
+        padding: 20px; /* Add some padding for visual spacing */
+        margin: 0 auto; /* Center the welcome section horizontally */
+    }
+
+    .buttons {
+        text-align: center;
+        margin-top: 40px;
+        {% comment %} box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7); {% endcomment %}
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 15px 25px;
+        background-color: #1579D2; /* Vibrant turquoise blue */
+        color: #fff;
+        text-decoration: none;
+        border-radius: 25px;
+        margin: 0 10px;
+        font-size: 18px;
+        border: none;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+    }
+
+    .btn:hover {
+        background-color: #1372BE; /* Slightly darker shade on hover for visual feedback */
+        transform: translateY(-3px);
+        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+    }
+
+</style>
+<body>
+
+<div class="background-overlay"></div>
+
+<header>
+    <div class="logo">
+        <img src="{% static 'logo2.png' %}" alt="VIVI Icon" class="header-icon">
+    </div>
+</header>
+
+<div class="content">
+    <div class="welcome-section">
+        <h1><b>Welcome to VIVI - Virtual Interview Platform</b></h1>
+        <p><b>Revolutionizing the way interviews are conducted.</b></p>
+    </div>
+
+    <div class="buttons">
+        <a href="{% url 'company'%}" class="btn"><b>For Companies</b></a>
+        <a href="{% url 'candidate'%}" class="btn"><b>For Candidates</b></a>
+    </div>
+</div>
+
+</body>
+</html>

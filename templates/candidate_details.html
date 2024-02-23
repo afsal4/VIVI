@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f8f8f8;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+
+      .options-container {
+        text-align: center;
+      }
+
+      .option-button {
+        display: inline-block;
+        padding: 15px 30px;
+        font-size: 18px;
+        background-color: #2ecc71;
+        color: #fff;
+        text-decoration: none;
+        margin: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        border: 2px solid #27ae60;
+      }
+
+      .option-button:hover {
+        background-color: #27ae60;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="options-container">
+      {% for i in candidates %} <br />
+      <br />
+      {{i.cadidate_name}}<br />
+      {{i.pdf_file}}<br />
+      {{i.candidate_id}}
+      {{i.id}}{% endfor %}
+    </div>
+  </body>
+</html>

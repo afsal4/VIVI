@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <title>Attractive Table</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: black;
+        }
+        
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: auto; /* Add overflow property for flexibility */
+            max-height: 70vh; /* Set a max height for the container */
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 15px;
+            text-align: left;
+        }
+
+        th {
+            background-color: black;
+            color: white;
+        }
+
+        .viewButton {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 8px 12px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Users History</h2>
+    <table>
+        <tbody>
+            <th>Sno</th>
+            <th>Name</th>
+            <th>Job Description</th>
+            <th>Email</th>
+            <th>Score</th>
+            {% for row in context %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{row.candidate_name}}</td>
+                <td>{{row.job_description}}</td>
+                <td>{{row.email}}</td>
+                <td>{{row.score}}</td>
+                {% comment %} <td><a href="{% url 'viewmore'%}"><button class="viewButton">View</button></a></td> {% endcomment %}
+            </tr>
+            {% endfor %}
+            <!-- Add more rows as needed -->
+        </tbody>
+    </table><br>
+</div>
+
+<script>
+    function viewHistory(name) {
+        alert("Viewing history for " + name);
+        // Add your view history logic here
+    }
+</script>
+</body>
+</html>
